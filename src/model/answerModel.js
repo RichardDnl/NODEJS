@@ -1,20 +1,18 @@
-const mongoose = require("mongoose");
+const Sequelize = require("sequelize");
 
-const AnswerSchema = new mongoose.Schema({
+module.exports = sequelize.define("answers",{
 
     text : {
-        type : String,
-        required : true
+        type : Sequelize.STRING(300),
     },
     
     surveyId : {
-        type : String
+        type : Sequelize.STRING(300)
     },
 
     amountVotes :{
-        type : String
+        type : Sequelize.INTEGER(11)
     }
 
 });
 
-mongoose.model("Answer",AnswerSchema);

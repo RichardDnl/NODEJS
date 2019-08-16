@@ -1,13 +1,11 @@
 const express = require ("express");
 const requireDir = require("require-dir");
-const mongoose = require("mongoose");
-
 
 const app = express();
 
 app.use(express.json());
 
-mongoose.connect('mongodb://localhost:27017/surveydb', {useNewUrlParser:true });
+require("./src/database/connection");
 
 requireDir("./src/model");
 

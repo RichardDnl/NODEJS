@@ -1,18 +1,16 @@
-const mongoose = require("mongoose");
+const Sequelize = require("sequelize");
 
-const SurveySchema = new mongoose.Schema({
-    text : {
-        type : String,
-        required : true,
+module.exports = sequelize.define("surveys", {
+    id : {
+        type : Sequelize.INTEGER(11),
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey : true,
     },
-    createAt : {
-        type : Date,
-        default : Date.now
+    text : {
+        type : Sequelize.STRING(300),
     },
     actived : {
-        type : String
+        type : Sequelize.STRING(300),
     }
 });
-
-
-mongoose.model("Survey",SurveySchema);

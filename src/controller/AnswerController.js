@@ -1,5 +1,4 @@
-const mongoose = require("mongoose");
-const Answer = mongoose.model("Answer");
+const Answer = require ("../model/answerModel");
 
 module.exports = {
     async postAnswer (req,res){

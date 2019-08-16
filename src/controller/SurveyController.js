@@ -1,15 +1,14 @@
-const mongoose = require("mongoose");
-const Survey = mongoose.model("Survey");
+const surveyModel = require("../model/surveyModel");
 
 module.exports = {
     async getSurveyList (req,res){
-        const getSurveyList = await Survey.find();
+        const getSurveyList = await surveyModel.find();
 
         return res.json(getSurveyList);
     },
 
     async postSurveyRegister(req,res){
-        const postSurvey = await Survey.create(req.body);
+        const postSurvey = await surveyModel.create(req.body);
 
         return res.json(postSurvey);
     },
